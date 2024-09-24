@@ -2,7 +2,6 @@ package by.marketplace.controller;
 
 
 import by.marketplace.entity.Product;
-
 import by.marketplace.servise.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -16,8 +15,6 @@ import java.util.List;
 public class ProductControllerView {
 
     private final ProductService productService;
-
-
 
     @GetMapping("/product/save")
     public String productSave(Model model) {
@@ -40,7 +37,7 @@ public class ProductControllerView {
     }
 
     @RequestMapping(value = "/product/delete/{id}", method = {RequestMethod.GET, RequestMethod.POST})
-    public String deleteBook(@PathVariable(value = "id") Long id) {
+    public String deleteProduct(@PathVariable(value = "id") Long id) {
         productService.deleteProductById(id);
         return "redirect:/product";
     }
@@ -60,6 +57,5 @@ public class ProductControllerView {
         model.addAttribute("product", product);
         return "redirect:/product";
     }
-
 }
 

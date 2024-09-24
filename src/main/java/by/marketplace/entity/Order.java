@@ -24,7 +24,7 @@ public class Order {
     private LocalDate date = LocalDate.now();
     private BigDecimal price;
     private String phone;
-    @Transient
+    @Enumerated (EnumType.STRING)
     private Status status;
     @OneToMany(mappedBy = "order", orphanRemoval = true)
     @ToString.Exclude
@@ -48,10 +48,4 @@ public class Order {
         orderProducts.removeIf(orderProduct -> orderProduct.getProduct().equals(product));
     }
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "status=" + status +
-                '}';
-    }
 }

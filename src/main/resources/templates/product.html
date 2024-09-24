@@ -42,14 +42,13 @@
 
         </div>
         <div class="col-md-1 text-end">
-            <li><a href="/basket" class="nav-link px-2 link-secondary">Basket</a></li>
-            <!--            <button type="button" class="btn btn-outline-primary">Basket</button>-->
+            <li><a href="/order" class="nav-link px-2 link-secondary">Orders</a></li>
         </div>
     </nav>
 </head>
 <body>
 
-<!--/*@thymesVar id="products" type="by.marketplace.controller.ProductControllerView"*/-->
+
 <div th:each="product: ${products}" class="alert alert-dark mt-2 bg-light" role="alert">
     <p> name:
     <h3 th:text="${product.name}"></h3>
@@ -75,19 +74,7 @@
             </div>
         </div>
     </form>
-
     <br>
-    <form th:action="'/product/addInBasket/'+${product.id}" method="post">
-        <label>
-            <input type="number" name="total" placeholder="quantity">
-        </label>
-        <button class="btn btn-warning" type="submit"> buy</button>
-        <!--        <p th:text="${info}"/>-->
-    </form>
-    <!--/*@thymesVar id="info" type=""*/-->
-
-    <!--    <p th:text="${info}"/>-->
 </div>
-
 </body>
 </html>

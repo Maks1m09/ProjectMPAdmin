@@ -1,18 +1,20 @@
 package by.marketplace.entity;
 
+
 public enum Status {
-    INPROCESSING ("In Processing"),
+    INPROCESSING("InProcessing"),
     COLLECTION("Collection"),
-    INTRANSIT("In Transit"),
-    COMPLETED ("Completed");
+    INTRANSIT("InTransit"),
+    COMPLETED("Completed");
 
     private final String displayValue;
 
-     Status(String displayValue) {
+    Status(String displayValue) {
         this.displayValue = displayValue;
     }
 
     public String getDisplayValue() {
         return displayValue;
     }
+
 }

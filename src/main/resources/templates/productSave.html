@@ -40,11 +40,7 @@
             </ul>
 
         </div>
-        <div class="col-md-1 text-end">
-            <button type="button" class="btn btn-outline-primary">Basket</button>
-        </div>
     </nav>
-
 </head>
 <body>
 <div>
@@ -59,7 +55,6 @@
                 Looks good!
             </div>
 
-
             <label for="product-quantity" class="form-label">quantity</label>
 
             <input type="number" th:field="${product.quantity}" id="product-quantity"/>
@@ -67,14 +62,12 @@
                 Looks good!
             </div>
 
-
             <label for="product-price" class="form-label">price</label>
 
             <input type="number" th:field="${product.price}" id="product-price"/>
             <div class="valid-feedback">
                 Looks good!
             </div>
-
 
             <label for="product-description" class="form-label">description</label>
             <input type="text" th:field="${product.description}" id="product-description"/>

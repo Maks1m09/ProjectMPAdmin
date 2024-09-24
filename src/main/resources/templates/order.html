@@ -40,15 +40,11 @@
             </ul>
 
         </div>
-        <div class="col-md-1 text-end">
-            <li><a href="/basket" class="nav-link px-2 link-secondary">Basket</a></li>
-            <!--            <button type="button" class="btn btn-outline-primary">Basket</button>-->
-        </div>
     </nav>
 </head>
 <body>
 
-<!--/*@thymesVar id="orders" type="by.marketplace.controller.OrderController"*/-->
+
 <div th:each="order: ${orders}" class="alert alert-dark mt-2 bg-light" role="alert">
     <p> id:
     <h3 th:text="${order.id}"></h3>
@@ -63,24 +59,18 @@
     <p> status:
     <h3 th:text="${order.status}"></h3>
 
-    <select class="form-select" aria-label="Default select example">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-    </select>
+    <form th:action="'/order/update/'+${order.id}" method="post">
 
+        <label for="status">Set status: </label>
+        <select id="status" name="statusValue">
+            <option th:each="enumm : ${T(by.marketplace.entity.Status).values()}"
+                    th:text="${enumm.displayValue}"
+                    th:value="${enumm}">
+            </option>
+        </select>
+        <input type="submit" value="Create status">
+    </form>
 
-
-<!--    <form th:action="@{/order}" method="post" th:object="${order}">-->
-    <select class="form-select" aria-label="Default select example">
-        <option th:each="status : ${T(by.marketplace.entity.Status).values()}"
-                th:text="${status.displayValue}"
-                th:value="${status.name()}">
-        </option>
-    </select>
-<!--        <input type="submit" value="Submit" />-->
-<!--    </form>-->
 </div>
 </body>
 </html>
