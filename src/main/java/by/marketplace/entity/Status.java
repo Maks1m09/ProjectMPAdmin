@@ -1,6 +1,5 @@
 package by.marketplace.entity;
 
-
 public enum Status {
     INPROCESSING("InProcessing"),
     COLLECTION("Collection"),
